@@ -11,8 +11,9 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		Log.d("BootBroadcastReceiver", "onReceive appname: " + TiApplication.getInstance().getClass().getName());
-		String[] packagenameelements = TiApplication.getInstance().getClass().getName().split("\\Q.\\E");
+		String appname = TiApplication.getInstance().getClass().getName();
+		Log.d("BootBroadcastReceiver", "onReceive appname: " + appname);
+		String[] packagenameelements = appname.split("\\Q.\\E");
 		String packagename = "";
 		packagename = packagenameelements[0];
 		for (int i = 1, l = packagenameelements.length - 1; i < l; ++i) {
@@ -31,7 +32,7 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 			/* for app */
 			try {
 
-				String activityname = TiApplication.getInstance().getClass().getName().replace("Application", "Activity");
+				String activityname = appname.replace("Application", "Activity");
 				Log.d("BootBroadcastReceiver", "activityname:" + activityname);				
 				Class<?> activityclass;
 					activityclass = Class.forName(activityname);
