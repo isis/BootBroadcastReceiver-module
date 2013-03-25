@@ -11,9 +11,17 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
+		Log.d("BootBroadcastReceiver", "onReceive appname: " + TiApplication.getInstance().getClass().getName());
+		String[] packagenameelements = TiApplication.getInstance().getClass().getName().split("\\Q.\\E");
+		String packagename = "";
+		packagename = packagenameelements[0];
+		for (int i = 1, l = packagenameelements.length - 1; i < l; ++i) {
+			packagename += "." + packagenameelements[i];
+		}
+		Log.d("BootBroadcastReceiver", "onReceive packagename: " + packagename);
+		
 		if ((intent.getAction().equals(Intent.ACTION_PACKAGE_REPLACED) // for update app 
-				/*&& intent
-				.getDataString().contains("com.my.app")*/)
+				&& intent.getDataString().contains(packagename))
 				|| intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) { // for boot
 			/* for service 
 			Intent i = new Intent(context, NotificationService.class);
