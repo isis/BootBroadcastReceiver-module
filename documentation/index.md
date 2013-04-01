@@ -1,39 +1,61 @@
-# bootbroadcastreceiver Module
+# *BootBroadcastReceiver Module*
 
 ## Description
 
-TODO: Enter your module description here
+*BootBroadcastReceiver Module* make your Titanium app launch when Android device boot and/or your app package replaced.
+
+*BootBroadcastReceiver Module* receives "android.intent.action.BOOT_COMPLETED" and "android.intent.action.PACKAGE_REPLACED", and launch your Titanium app.  
 
 ## Accessing the bootbroadcastreceiver Module
 
-To access this module from JavaScript, you would do the following:
-
+*BootBroadcastReceiver Module* no neads creation of Object of Module like below:
 	var bootbroadcastreceiver = require("jp.isisredirect.bootbroadcastreceiver");
 
-The bootbroadcastreceiver variable is a reference to the Module object.	
+You need only import module by <module> in tiapp.xml :
+
+     <modules>
+        <module platform="android" version="2.0">jp.isisredirect.bootbroadcastreceiver</module>
+     </modules>
+
+## Requrement
+
+Android min-sdk: Android 2.2 (API Level 8)
+Titanium 2.1.0.GA
 
 ## Reference
 
-TODO: If your module has an API, you should document
-the reference here.
+### module method
 
-### ___PROJECTNAMEASIDENTIFIER__.function
++ non
 
-TODO: This is an example of a module function.
+### module property
 
-### ___PROJECTNAMEASIDENTIFIER__.property
-
-TODO: This is an example of a module property.
++ non
 
 ## Usage
 
-TODO: Enter your usage example here
+You need import module only.
 
 ## Author
 
-TODO: Enter your author name, email and other contact
-details you want to share here. 
+Kastumi ISHIDA (isis re-direct) in k.i.office.
+
+isis.redirect4@gmail.com
 
 ## License
+Copyright 2013 Katsumi ISHIDA. All rights reserved.
 
-TODO: Enter your license/legal information here.
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
+ USA.
