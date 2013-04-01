@@ -12,9 +12,10 @@ Titaium Mobile Module for Android to receive BOOT_COMPLETE/PACKAGE_REPLACED and 
 ## Accessing the bootbroadcastreceiver Module
 
 *BootBroadcastReceiver Module* no neads creation of Object of Module like below:
+
   var bootbroadcastreceiver = require("jp.isisredirect.bootbroadcastreceiver");
 
-You need only import module by <module> in tiapp.xml :
+You need only import module by &lt;module&gt; in tiapp.xml :
 
      <modules>
         <module platform="android" version="2.0">jp.isisredirect.bootbroadcastreceiver</module>
@@ -62,3 +63,4 @@ Copyright 2013 Katsumi ISHIDA. All rights reserved.
  License along with this library; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
  USA.
+
