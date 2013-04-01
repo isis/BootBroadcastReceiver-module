@@ -2,16 +2,17 @@
 
 ## Description
 
-*BootBroadcastReceiver Module* make your Titanium app launch when Android device boot and/or your app package replaced.
+*BootBroadcastReceiver Module* makes your Titanium app launch when Android device boot and/or your app package replaced.
 
 *BootBroadcastReceiver Module* receives "android.intent.action.BOOT_COMPLETED" and "android.intent.action.PACKAGE_REPLACED", and launch your Titanium app.  
 
 ## Accessing the bootbroadcastreceiver Module
 
 *BootBroadcastReceiver Module* no neads creation of Object of Module like below:
+
 	var bootbroadcastreceiver = require("jp.isisredirect.bootbroadcastreceiver");
 
-You need only import module by <module> in tiapp.xml :
+You need only import module by &lt;module&gt; in tiapp.xml :
 
      <modules>
         <module platform="android" version="2.0">jp.isisredirect.bootbroadcastreceiver</module>
